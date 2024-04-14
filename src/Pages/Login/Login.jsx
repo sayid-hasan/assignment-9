@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const { loginUser, loginWithGithub, logInwithGoogle } =
@@ -27,8 +28,8 @@ const Login = () => {
       .then(() => {
         toast.success("loggeg in successfully");
       })
-      .catch((err) => {
-        console.log(err);
+      .catch(() => {
+        toast.error("incorrect email or password");
       });
   };
 
@@ -53,7 +54,6 @@ const Login = () => {
       })
       .catch((error) => {
         // Handle Errors here.
-        console.log(error);
       });
   };
 
@@ -174,6 +174,7 @@ const Login = () => {
             </Link>
           </p>
         </div>
+        {/* <ToastContainer></ToastContainer> */}
       </div>
     </div>
   );

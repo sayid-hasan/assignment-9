@@ -45,11 +45,11 @@ const AuthProvider = ({ children }) => {
     });
   };
   const loginUser = (email, pass) => {
-    setLoading(true);
     return signInWithEmailAndPassword(auth, email, pass);
   };
   const logoutUser = () => {
     setLoading(true);
+    setUser(null);
     return signOut(auth);
   };
   const logInwithGoogle = () => {
