@@ -10,7 +10,7 @@ const Login = () => {
     register,
     handleSubmit,
     watch,
-    // formState: { errors },
+    formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
     console.log(data);
@@ -24,9 +24,9 @@ const Login = () => {
     };
   }, [watch]);
   return (
-    <div className="flex items-center flex-col ">
+    <div className="max-w-xl mx-auto ">
       <div>
-        <div className="w-full max-w-md my-5 bg-[#71b100] bg-opacity-5 p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
+        <div className="w-full my-5 bg-[#71b100] bg-opacity-5 p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
           <h1 className="text-2xl font-bold text-center">Login</h1>
           <form
             onSubmit={handleSubmit(onSubmit)}
@@ -56,7 +56,10 @@ const Login = () => {
                   type={showPass ? "text" : "password"}
                   name="password"
                   id="password"
-                  {...register("password", { required: true })}
+                  {...register("password", {
+                    required: true,
+                    pattern: /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/,
+                  })}
                   placeholder="Password"
                   className="w-full px-4 py-3 rounded-md focus:border-[#71b100]  dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
                 />
@@ -67,6 +70,11 @@ const Login = () => {
                   {showPass ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
                 </div>
               </div>
+              <span className="font-semibold text-red-600">
+                {errors.password?.type === "required" && "Password is required"}
+                {errors.password?.type === "pattern" &&
+                  "Password must have at least one uppercase letter, one lowercase letter, and be at least 6 characters long"}
+              </span>
             </div>
             <button className="block w-full p-3 text-center rounded-lg bg-[#71b100]  text-white font-bold  dark:text-gray-50 dark:bg-violet-600">
               Sign in
