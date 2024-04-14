@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
@@ -97,8 +97,7 @@ const Register = () => {
               />
 
               <span className="font-semibold text-red-600">
-                {errors.photourl?.type === "pattern" &&
-                  "Please enter a valid URL"}
+                {errors.image?.type === "pattern" && "Please enter a valid URL"}
               </span>
             </div>
 

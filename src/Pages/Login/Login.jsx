@@ -52,7 +52,7 @@ const Login = () => {
         const user = result.user;
         console.log(user);
       })
-      .catch((error) => {
+      .catch(() => {
         // Handle Errors here.
       });
   };

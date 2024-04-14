@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 const ContactUs = () => {
   useEffect(() => {
-    AOS.init({ duration: "1000", delay: "70" });
+    AOS.init({ duration: "500", delay: "70" });
   }, []);
   return (
     <div data-aos="flip-down">
