@@ -1,10 +1,13 @@
 //import { data } from "autoprefixer";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 
 const Login = () => {
+  const samar = useContext(AuthContext);
+  console.log(samar);
   const [showPass, setShowPass] = useState(false);
   const {
     register,

@@ -1,10 +1,17 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { updateProfile } from "firebase/auth";
+import auth from "../../Firebase/firebase.config";
 
 const Register = () => {
+  const { createUser } = useContext(AuthContext);
   const [showPass, setShowPass] = useState(false);
+  //const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -12,11 +19,30 @@ const Register = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
+    const email = data.email;
+    const username = data.username;
+    const password = data.password;
+    const photourl = data.photourl;
+
+    // creating user
+
+    createUser(email, password)
+      .then((res) => {
+        console.log(res.user);
+        toast.success("Registeres successfully");
+        //navigate("/login");
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error("user already exist");
+        // navigate("/login");
+      });
+
+    // updating user name and profile url
   };
   useEffect(() => {
     const subscription = watch((data) => {
-      console.log(data);
+      // console.log(data);
     });
     return () => {
       subscription.unsubscribe();
@@ -134,7 +160,7 @@ const Register = () => {
               </span>
             </div>
             <button className="block w-full p-3 text-center rounded-lg bg-[#71b100]  text-white font-bold  dark:text-gray-50 dark:bg-violet-600">
-              Sign in
+              Register
             </button>
           </form>
 
@@ -149,6 +175,7 @@ const Register = () => {
           </p>
         </div>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };
