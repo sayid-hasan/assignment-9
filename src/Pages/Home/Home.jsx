@@ -1,9 +1,15 @@
 //import React from 'react';
 
+import SliderSweeper from "./slidersweeper/SliderSweeper";
+
 //import Navbar from "../../Shared/Navbar/Navbar";
 
 const Home = () => {
-  return <h2>this is home</h2>;
+  return (
+    <>
+      <SliderSweeper></SliderSweeper>
+    </>
+  );
 };
 
 export default Home;
