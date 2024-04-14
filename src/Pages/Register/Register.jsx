@@ -1,17 +1,15 @@
 import { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { updateProfile } from "firebase/auth";
-import auth from "../../Firebase/firebase.config";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateUserProfile } = useContext(AuthContext);
   const [showPass, setShowPass] = useState(false);
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -19,29 +17,27 @@ const Register = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    const email = data.email;
-    const username = data.username;
-    const password = data.password;
-    const photourl = data.photourl;
+    const { email, username, password, image } = data;
 
+    // console.log(email, username, password, image);
+    const from = "/login";
     // creating user
-
     createUser(email, password)
       .then((res) => {
         console.log(res.user);
-        toast.success("Registeres successfully");
-        //navigate("/login");
+        toast.success("registered successfully");
+        navigate(from);
+        updateUserProfile(username, image)
+          .then()
+          .catch((err) => console.log(err));
       })
-      .catch((err) => {
-        console.log(err);
-        toast.error("user already exist");
-        // navigate("/login");
+      .catch(() => {
+        toast.error("user exist already");
+        navigate(from);
       });
-
-    // updating user name and profile url
   };
   useEffect(() => {
-    const subscription = watch((data) => {
+    const subscription = watch(() => {
       // console.log(data);
     });
     return () => {
@@ -62,14 +58,14 @@ const Register = () => {
             {/* name */}
 
             <div className="space-y-1 text-sm">
-              <label htmlFor="name" className="block dark:text-gray-600">
+              <label htmlFor="username" className="block dark:text-gray-600">
                 Name
               </label>
               <input
                 type="text"
-                name="name"
-                id="name"
-                {...register("userName", {
+                name="username"
+                id="username"
+                {...register("username", {
                   required: true,
                   pattern: /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/,
                 })}
@@ -78,22 +74,22 @@ const Register = () => {
               />
 
               <span className="font-semibold text-red-600">
-                {errors.userName?.type === "required" && "Name is required"}
-                {errors.userName?.type === "pattern" &&
+                {errors.username?.type === "required" && "Name is required"}
+                {errors.username?.type === "pattern" &&
                   "Please enter a valid name"}
               </span>
             </div>
 
             {/* photo Url */}
             <div className="space-y-1 text-sm">
-              <label htmlFor="photourl" className="block dark:text-gray-600">
+              <label htmlFor="image" className="block dark:text-gray-600">
                 Photo URL
               </label>
               <input
                 type="text"
-                name="photourl"
-                id="photourl"
-                {...register("photourl", {
+                name="image"
+                id="image"
+                {...register("image", {
                   pattern: /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/,
                 })}
                 placeholder="photo URL"

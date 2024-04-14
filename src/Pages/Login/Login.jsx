@@ -4,10 +4,12 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
+import { toast } from "react-toastify";
 
 const Login = () => {
-  const samar = useContext(AuthContext);
-  console.log(samar);
+  const { loginUser, loginWithGithub, logInwithGoogle } =
+    useContext(AuthContext);
+
   const [showPass, setShowPass] = useState(false);
   const {
     register,
@@ -16,8 +18,45 @@ const Login = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
+    const { email, password } = data;
+    // login
+
+    //login
+
+    loginUser(email, password)
+      .then(() => {
+        toast.success("loggeg in successfully");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
+
+  // soscial login
+
+  const handlegoogleLogin = () => {
+    logInwithGoogle()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        console.log(error);
+      });
+  };
+  const handlegithubLogin = () => {
+    loginWithGithub()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        console.log(error);
+      });
+  };
+
   useEffect(() => {
     const subscription = watch((data) => {
       console.log(data);
@@ -93,7 +132,13 @@ const Login = () => {
             <div className="flex-1 h-px sm:w-16 dark:bg-gray-300"></div>
           </div>
           <div className="flex justify-center space-x-4">
-            <button aria-label="Log in with Google" className="p-3 rounded-sm">
+            <button
+              onClick={() => {
+                handlegoogleLogin();
+              }}
+              aria-label="Log in with Google"
+              className="p-3 rounded-sm"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 32 32"
@@ -103,7 +148,13 @@ const Login = () => {
               </svg>
             </button>
 
-            <button aria-label="Log in with GitHub" className="p-3 rounded-sm">
+            <button
+              onClick={() => {
+                handlegithubLogin();
+              }}
+              aria-label="Log in with GitHub"
+              className="p-3 rounded-sm"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 32 32"

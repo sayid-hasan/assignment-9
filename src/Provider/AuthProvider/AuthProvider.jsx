@@ -6,11 +6,13 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import auth from "../../Firebase/firebase.config";
-import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth/cordova";
+import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 
 export const AuthContext = createContext();
+
 const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
 
@@ -20,6 +22,27 @@ const AuthProvider = ({ children }) => {
   const createUser = (email, pass) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, pass);
+  };
+
+  // onAuthStateChange
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      console.log(currentUser);
+      setUser(currentUser);
+      setLoading(false);
+    });
+    return () => {
+      unsubscribe();
+    };
+  }, []);
+
+  // update propfile
+
+  const updateUserProfile = (username, image) => {
+    return updateProfile(auth.currentUser, {
+      displayName: username,
+      photoURL: image,
+    });
   };
   const loginUser = (email, pass) => {
     setLoading(true);
@@ -39,18 +62,6 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, githubProvider);
   };
 
-  // onAuthStateChange
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      console.log(currentUser);
-      setUser(currentUser);
-      setLoading(false);
-    });
-    return () => {
-      unsubscribe();
-    };
-  }, []);
-
   const authInfo = {
     user,
     createUser,
@@ -59,6 +70,7 @@ const AuthProvider = ({ children }) => {
     loginWithGithub,
     logInwithGoogle,
     loading,
+    updateUserProfile,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

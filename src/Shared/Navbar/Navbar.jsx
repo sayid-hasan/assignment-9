@@ -2,8 +2,14 @@ import { Link, NavLink } from "react-router-dom";
 import "animate.css";
 import { MdRealEstateAgent } from "react-icons/md";
 import "./Navbar.css";
+import logo from "../../assets/Images/user.png";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Navbar = () => {
+  const { user, logoutUser, loading } = useContext(AuthContext);
   const navlinks = (
     <>
       <li className="flex">
@@ -29,24 +35,68 @@ const Navbar = () => {
       </li>
     </>
   );
+
+  const handleLogout = () => {
+    logoutUser()
+      .then(() => {
+        toast("logged out successfully");
+      })
+      .catch((err) => console.log(err));
+  };
+
   const buttonProfile = (
     <>
       {/* buttons and user profile */}
-      <div className="items-center flex-shrink-0 hidden lg:flex mt-4">
+      <div className="items-center flex-shrink-0 lg:flex mt-4">
         {/* <button className="self-center px-8 py-3 rounded">Sign in</button> */}
-        <Link
-          to="/login"
-          className="self-center px-8 py-3 font-semibold rounded bg-[#71b100] text-white"
-        >
-          Sign in
-        </Link>
+        {loading ? (
+          <>
+            <span className="loading loading-spinner text-success"></span>
+          </>
+        ) : (
+          <>
+            {user ? (
+              <>
+                <div className="dropdown dropdown-end">
+                  <div tabIndex={0} role="button" className=" m-1">
+                    <div className="avatar online">
+                      <div className="w-11 rounded-full">
+                        <img src={user?.photoURL || logo} />
+                      </div>
+                    </div>
+                  </div>
+                  <ul
+                    tabIndex={0}
+                    className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+                  >
+                    <li>
+                      <Link>{user?.displayName || "user Name not found"}</Link>
+                    </li>
+                    <li>
+                      <button onClick={handleLogout}>Log out</button>
+                    </li>
+                  </ul>
+                </div>
+              </>
+            ) : (
+              <>
+                <Link
+                  to="/login"
+                  className="self-center px-8 py-3 font-semibold rounded bg-[#71b100] text-white"
+                >
+                  Sign in
+                </Link>
+              </>
+            )}
+          </>
+        )}
       </div>
     </>
   );
 
   return (
     <div>
-      <div className="navbar bg-base-100">
+      <div className="navbar items-baseline ">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -72,7 +122,7 @@ const Navbar = () => {
               {navlinks}
             </ul>
           </div>
-          <a className="btn btn-ghost  animate__animated animate__tada text-3xl font-bold text-[#71b100] bg-opacity-70 py-5 h-auto min-h-0  ">
+          <a className="btn btn-ghost  animate__animated animate__tada text-xl md:text-3xl font-bold text-[#71b100] bg-opacity-70 py-5 h-auto min-h-0  ">
             <MdRealEstateAgent></MdRealEstateAgent>
             Dream Estate
           </a>
@@ -82,6 +132,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">{buttonProfile}</div>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };
