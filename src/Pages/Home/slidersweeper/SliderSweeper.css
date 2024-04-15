@@ -20,7 +20,16 @@
   height: calc(100vh - 95px);
   border-radius: 16px;
 
-  object-fit: cover;
+  object-position: center;
+}
+.pentagon {
+  clip-path: polygon(0% 100%, 0% 0%, 69% 0%, 100% 51%, 72% 100%);
+  background: #71b100;
+  background-color: transparent;
+
+  backdrop-filter: blur(30px);
+  height: 250px;
+  width: 300px;
 }
 
 .autoplay-progress {
