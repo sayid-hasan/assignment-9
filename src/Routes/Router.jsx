@@ -8,6 +8,7 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import PrivateRoutes from "./PrivateRoutes";
 import UserProfile from "../Pages/UserProfile/UserProfile";
+import EstateDetails from "../Pages/EstateDetails/EstateDetails";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
+        loader: () => fetch("/data.json"),
         element: <Home></Home>,
       },
       {
@@ -36,6 +38,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoutes>
             <UserProfile></UserProfile>
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "/:id",
+        element: (
+          <PrivateRoutes>
+            <EstateDetails></EstateDetails>
           </PrivateRoutes>
         ),
       },

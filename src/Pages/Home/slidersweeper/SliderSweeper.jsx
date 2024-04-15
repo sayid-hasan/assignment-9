@@ -91,7 +91,7 @@ const SliderSweeper = () => {
                         </svg>
                       </div>
                       <div className="stat-title">Downloads</div>
-                      <div className="stat-value text-xl md:text-4xl text-[#71b100]">
+                      <div className="stat-value text-xl md:text-4xl text-[#05A081]">
                         31K
                       </div>
                       <div className="stat-desc">Jan 1st - Feb 1st</div>
@@ -114,7 +114,7 @@ const SliderSweeper = () => {
                         </svg>
                       </div>
                       <div className="stat-title">New Users</div>
-                      <div className="stat-value text-xl md:text-4xl text-[#71b100]">
+                      <div className="stat-value text-xl md:text-4xl text-[#05A081]">
                         4,200
                       </div>
                       <div className="stat-desc">↗︎ 400 (22%)</div>
@@ -137,7 +137,7 @@ const SliderSweeper = () => {
                         </svg>
                       </div>
                       <div className="stat-title">New Registers</div>
-                      <div className="stat-value text-xl md:text-4xl text-[#71b100]">
+                      <div className="stat-value text-xl md:text-4xl text-[#05A081]">
                         1,200
                       </div>
                       <div className="stat-desc">↘︎ 90 (14%)</div>
@@ -171,7 +171,7 @@ const SliderSweeper = () => {
                         </svg>
                       </div>
                       <div className="stat-title">Orders</div>
-                      <div className="stat-value text-xl md:text-4xl text-[#71b100]">
+                      <div className="stat-value text-xl md:text-4xl text-[#05A081]">
                         200
                       </div>
                       <div className="stat-desc">Jan 1st - Feb 1st</div>
@@ -194,7 +194,7 @@ const SliderSweeper = () => {
                         </svg>
                       </div>
                       <div className="stat-title">New Users</div>
-                      <div className="stat-value text-xl md:text-4xl text-[#71b100]">
+                      <div className="stat-value text-xl md:text-4xl text-[#05A081]">
                         172%
                       </div>
                       <div className="stat-desc">↗︎Growth</div>
@@ -212,7 +212,7 @@ const SliderSweeper = () => {
                         </svg>
                       </div>
                       <div className="stat-title">New Registers</div>
-                      <div className="stat-value text-xl md:text-4xl text-[#71b100]">
+                      <div className="stat-value text-xl md:text-4xl text-[#05A081]">
                         17%
                       </div>
                       <div className="stat-desc">Bounce rate</div>
@@ -249,7 +249,7 @@ const SliderSweeper = () => {
                         </svg>
                       </div>
                       <div className="stat-title">Orders</div>
-                      <div className="stat-value text-xl md:text-4xl text-[#71b100]">
+                      <div className="stat-value text-xl md:text-4xl text-[#05A081]">
                         200
                       </div>
                       <div className="stat-desc">Jan 1st - Feb 1st</div>
@@ -272,7 +272,7 @@ const SliderSweeper = () => {
                         </svg>
                       </div>
                       <div className="stat-title">New Users</div>
-                      <div className="stat-value text-xl md:text-4xl text-[#71b100]">
+                      <div className="stat-value text-xl md:text-4xl text-[#05A081]">
                         172%
                       </div>
                       <div className="stat-desc">↗︎Growth</div>
@@ -290,7 +290,7 @@ const SliderSweeper = () => {
                         </svg>
                       </div>
                       <div className="stat-title">New Registers</div>
-                      <div className="stat-value text-xl md:text-4xl text-[#71b100]">
+                      <div className="stat-value text-xl md:text-4xl text-[#05A081]">
                         17%
                       </div>
                       <div className="stat-desc">Bounce rate</div>
@@ -330,7 +330,7 @@ const SliderSweeper = () => {
                         </svg>
                       </div>
                       <div className="stat-title">Downloads</div>
-                      <div className="stat-value text-xl md:text-4xl text-[#71b100]">
+                      <div className="stat-value text-xl md:text-4xl text-[#05A081]">
                         31K
                       </div>
                       <div className="stat-desc">Jan 1st - Feb 1st</div>
@@ -353,7 +353,7 @@ const SliderSweeper = () => {
                         </svg>
                       </div>
                       <div className="stat-title">New Users</div>
-                      <div className="stat-value text-xl md:text-4xl text-[#71b100]">
+                      <div className="stat-value text-xl md:text-4xl text-[#05A081]">
                         4,200
                       </div>
                       <div className="stat-desc">↗︎ 400 (22%)</div>
@@ -376,7 +376,7 @@ const SliderSweeper = () => {
                         </svg>
                       </div>
                       <div className="stat-title">New Registers</div>
-                      <div className="stat-value text-xl md:text-4xl text-[#71b100]">
+                      <div className="stat-value text-xl md:text-4xl text-[#05A081]">
                         1,200
                       </div>
                       <div className="stat-desc">↘︎ 90 (14%)</div>

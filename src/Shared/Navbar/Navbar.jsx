@@ -84,7 +84,7 @@ const Navbar = () => {
               <>
                 <Link
                   to="/login"
-                  className="self-center px-8 py-3 font-semibold rounded bg-[#71b100] text-white"
+                  className="self-center px-8 py-3 font-semibold rounded bg-[#05A081] text-white"
                 >
                   Sign in
                 </Link>
@@ -124,7 +124,7 @@ const Navbar = () => {
               {navlinks}
             </ul>
           </div>
-          <a className="btn btn-ghost  animate__animated animate__tada text-xl md:text-3xl font-bold text-[#71b100] bg-opacity-70 py-5 h-auto min-h-0  ">
+          <a className="btn btn-ghost  animate__animated animate__tada text-xl md:text-3xl font-bold text-[#05A081] bg-opacity-70 py-5 h-auto min-h-0  ">
             <MdRealEstateAgent></MdRealEstateAgent>
             Dream Estate
           </a>

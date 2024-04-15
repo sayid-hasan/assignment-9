@@ -37,7 +37,7 @@ const UserProfile = () => {
     <div>
       <div className="   max-w-5xl  mx-auto my-8">
         {/* 1 */}
-        <div className=" w-full flex   flex-col md:flex-row  items-center   my-5 bg-[#71b100] bg-opacity-5 p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
+        <div className=" w-full flex   flex-col md:flex-row  items-center   my-5 bg-[#05A081] bg-opacity-5 p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
           {/* 1 */}
           <div>
             <form
@@ -54,7 +54,7 @@ const UserProfile = () => {
               <div className="space-y-1 text-sm">
                 <label
                   htmlFor="username"
-                  className="block font-semibold text-base text-[#71b100] "
+                  className="block font-semibold text-base text-[#05A081] "
                 >
                   Name
                 </label>
@@ -67,7 +67,7 @@ const UserProfile = () => {
                     pattern: /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/,
                   })}
                   placeholder="Name"
-                  className="w-full px-4 py-3 rounded-md focus:border-[#71b100] dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+                  className="w-full px-4 py-3 rounded-md focus:border-[#05A081] dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
                 />
 
                 <span className="font-semibold text-red-600">
@@ -81,7 +81,7 @@ const UserProfile = () => {
               <div className="space-y-1 text-sm">
                 <label
                   htmlFor="image"
-                  className="block font-semibold text-base text-[#71b100] "
+                  className="block font-semibold text-base text-[#05A081] "
                 >
                   Photo URL
                 </label>
@@ -93,7 +93,7 @@ const UserProfile = () => {
                     pattern: /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/,
                   })}
                   placeholder="photo URL"
-                  className="w-full px-4 py-3 rounded-md focus:border-[#71b100] dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+                  className="w-full px-4 py-3 rounded-md focus:border-[#05A081] dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
                 />
 
                 <span className="font-semibold text-red-600">
@@ -103,7 +103,7 @@ const UserProfile = () => {
               </div>
 
               {/* button */}
-              <button className="block w-full p-3 text-center rounded-lg bg-[#71b100]  text-white font-bold  dark:text-gray-50 dark:bg-violet-600">
+              <button className="block w-full p-3 text-center rounded-lg bg-[#05A081]  text-white font-bold  dark:text-gray-50 dark:bg-violet-600">
                 Sign in
               </button>
             </form>

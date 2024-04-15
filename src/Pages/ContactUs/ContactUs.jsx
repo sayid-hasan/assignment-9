@@ -8,7 +8,7 @@ const ContactUs = () => {
   }, []);
   return (
     <div data-aos="flip-down">
-      <section className="py-6 my-5 bg-[#71b100] bg-opacity-5 rounded-xl dark:text-gray-900">
+      <section className="py-6 my-5 bg-[#05A081] bg-opacity-5 rounded-xl dark:text-gray-900">
         <div className="grid w-full grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
           <div className="py-6 md:py-0 md:px-6">
             <h1 className="text-4xl font-bold">Get in touch</h1>
@@ -61,7 +61,7 @@ const ContactUs = () => {
             className="flex flex-col py-6 space-y-6 md:py-0 md:px-6"
           >
             <label className="block">
-              <span className="mb-3 text-[#71b100] bold">Full name</span>
+              <span className="mb-3 text-[#05A081] bold">Full name</span>
               <input
                 type="text"
                 placeholder="Leroy Jenkins"
@@ -69,7 +69,7 @@ const ContactUs = () => {
               />
             </label>
             <label className="block">
-              <span className="mb-3 text-[#71b100] bold">Email address</span>
+              <span className="mb-3 text-[#05A081] bold">Email address</span>
               <input
                 type="email"
                 placeholder="leroy@jenkins.com"
@@ -77,13 +77,13 @@ const ContactUs = () => {
               />
             </label>
             <label className="block border p-4 rounded-md">
-              <span className="mb-3 text-[#71b100] bold">Message</span>
+              <span className="mb-3 text-[#05A081] bold">Message</span>
               <textarea
                 rows="3"
                 className="block w-full rounded-md focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:bg-gray-100"
               ></textarea>
             </label>
-            <button className="self-center px-8 py-3 font-semibold rounded bg-[#71b100] text-white">
+            <button className="self-center px-8 py-3 font-semibold rounded bg-[#05A081] text-white">
               Send
             </button>
           </form>

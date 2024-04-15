@@ -47,7 +47,7 @@ const Register = () => {
   return (
     <div className=" mx-auto max-w-xl ">
       <div className="max-w-xl">
-        <div className="w-full   my-5 bg-[#71b100] bg-opacity-5 p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
+        <div className="w-full   my-5 bg-[#05A081] bg-opacity-5 p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
           <h1 className="text-2xl font-bold text-center">Sign Up</h1>
           <form
             onSubmit={handleSubmit(onSubmit)}
@@ -70,7 +70,7 @@ const Register = () => {
                   pattern: /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/,
                 })}
                 placeholder="Name"
-                className="w-full px-4 py-3 rounded-md focus:border-[#71b100] dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+                className="w-full px-4 py-3 rounded-md focus:border-[#05A081] dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
               />
 
               <span className="font-semibold text-red-600">
@@ -93,7 +93,7 @@ const Register = () => {
                   pattern: /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/,
                 })}
                 placeholder="photo URL"
-                className="w-full px-4 py-3 rounded-md focus:border-[#71b100] dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+                className="w-full px-4 py-3 rounded-md focus:border-[#05A081] dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
               />
 
               <span className="font-semibold text-red-600">
@@ -115,7 +115,7 @@ const Register = () => {
                   pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
                 })}
                 placeholder="Email"
-                className="w-full px-4 py-3 rounded-md focus:border-[#71b100] dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+                className="w-full px-4 py-3 rounded-md focus:border-[#05A081] dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
               />
 
               <span className="font-semibold text-red-600">
@@ -139,7 +139,7 @@ const Register = () => {
                     pattern: /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/,
                   })}
                   placeholder="Password"
-                  className="w-full px-4 py-3 rounded-md focus:border-[#71b100]  dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+                  className="w-full px-4 py-3 rounded-md focus:border-[#05A081]  dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
                 />
                 <div
                   className="absolute right-0 -translate-x-3 "
@@ -154,7 +154,7 @@ const Register = () => {
                   "Password must have at least one uppercase letter, one lowercase letter, and be at least 6 characters long"}
               </span>
             </div>
-            <button className="block w-full p-3 text-center rounded-lg bg-[#71b100]  text-white font-bold  dark:text-gray-50 dark:bg-violet-600">
+            <button className="block w-full p-3 text-center rounded-lg bg-[#05A081]  text-white font-bold  dark:text-gray-50 dark:bg-violet-600">
               Register
             </button>
           </form>
@@ -163,7 +163,7 @@ const Register = () => {
             already have an account?
             <Link
               to="/login"
-              className="underline dark:text-gray-800 mx-3 text-[#71b100] font-semibold"
+              className="underline dark:text-gray-800 mx-3 text-[#05A081] font-semibold"
             >
               Sign in
             </Link>

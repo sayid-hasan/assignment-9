@@ -1,7 +1,7 @@
 //import { data } from "autoprefixer";
 import { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
@@ -10,6 +10,11 @@ import "react-toastify/dist/ReactToastify.css";
 const Login = () => {
   const { loginUser, loginWithGithub, logInwithGoogle } =
     useContext(AuthContext);
+
+  const navigate = useNavigate();
+
+  const location = useLocation();
+  console.log(location);
 
   const [showPass, setShowPass] = useState(false);
   const {
@@ -27,6 +32,9 @@ const Login = () => {
     loginUser(email, password)
       .then(() => {
         toast.success("loggeg in successfully");
+
+        // redirect to location
+        navigate(location?.state || "/");
       })
       .catch(() => {
         toast.error("incorrect email or password");
@@ -37,9 +45,11 @@ const Login = () => {
 
   const handlegoogleLogin = () => {
     logInwithGoogle()
-      .then((result) => {
-        const user = result.user;
-        console.log(user);
+      .then(() => {
+        //const user = result.user;
+        // redirect to location
+        navigate(location?.state || "/");
+        //console.log(user);
       })
       .catch((error) => {
         // Handle Errors here.
@@ -48,9 +58,11 @@ const Login = () => {
   };
   const handlegithubLogin = () => {
     loginWithGithub()
-      .then((result) => {
-        const user = result.user;
-        console.log(user);
+      .then(() => {
+        //const user = result.user;
+        //console.log(user);
+        // redirect to location
+        navigate(location?.state || "/");
       })
       .catch(() => {
         // Handle Errors here.
@@ -68,7 +80,7 @@ const Login = () => {
   return (
     <div className="max-w-xl mx-auto ">
       <div>
-        <div className="w-full my-5 bg-[#71b100] bg-opacity-5 p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
+        <div className="w-full my-5 bg-[#05A081] bg-opacity-5 p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
           <h1 className="text-2xl font-bold text-center">Login</h1>
           <form
             onSubmit={handleSubmit(onSubmit)}
@@ -86,7 +98,7 @@ const Login = () => {
                 id="email"
                 {...register("email", { required: true })}
                 placeholder="Email"
-                className="w-full px-4 py-3 rounded-md focus:border-[#71b100] dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+                className="w-full px-4 py-3 rounded-md focus:border-[#05A081] dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
               />
             </div>
             <div className="space-y-1 text-sm">
@@ -103,7 +115,7 @@ const Login = () => {
                     pattern: /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/,
                   })}
                   placeholder="Password"
-                  className="w-full px-4 py-3 rounded-md focus:border-[#71b100]  dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+                  className="w-full px-4 py-3 rounded-md focus:border-[#05A081]  dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
                 />
                 <div
                   className="absolute right-0 -translate-x-3 "
@@ -118,7 +130,7 @@ const Login = () => {
                   "Password must have at least one uppercase letter, one lowercase letter, and be at least 6 characters long"}
               </span>
             </div>
-            <button className="block w-full p-3 text-center rounded-lg bg-[#71b100]  text-white font-bold  dark:text-gray-50 dark:bg-violet-600">
+            <button className="block w-full p-3 text-center rounded-lg bg-[#05A081]  text-white font-bold  dark:text-gray-50 dark:bg-violet-600">
               Sign in
             </button>
           </form>
@@ -168,7 +180,7 @@ const Login = () => {
             Don&#39;t have an account?
             <Link
               to="/register"
-              className="underline dark:text-gray-800 mx-3 text-[#71b100] font-semibold"
+              className="underline dark:text-gray-800 mx-3 text-[#05A081] font-semibold"
             >
               Sign up
             </Link>
