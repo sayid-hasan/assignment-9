@@ -7,7 +7,7 @@ import { useEffect } from "react";
 
 const Estate = ({ estate }) => {
   useEffect(() => {
-    AOS.init({ duration: "500", delay: "70" });
+    AOS.init({ duration: "300", delay: "70" });
   }, []);
   const {
     image,
@@ -33,7 +33,7 @@ const Estate = ({ estate }) => {
             alt=""
             className="object-cover object-center w-full rounded-md h-72 bg-gray-500"
           />
-          <div className="absolute top-2 right-2 self-center px-8 py-3 font-semibold rounded-full bg-[#05A081] text-white  ">
+          <div className="absolute top-2 right-2 self-center px-8 py-3 font-semibold rounded-[50%] bg-[#05A081] text-white  ">
             {status}
           </div>
         </div>

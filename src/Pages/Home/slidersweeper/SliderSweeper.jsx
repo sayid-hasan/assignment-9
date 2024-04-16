@@ -25,7 +25,7 @@ const SliderSweeper = () => {
   const progressContent = useRef(null);
   // data aos
   useEffect(() => {
-    AOS.init({ duration: "500", delay: "70" });
+    AOS.init({ duration: "300", delay: "70" });
   }, []);
   const onAutoplayTimeLeft = (s, time, progress) => {
     progressCircle.current.style.setProperty("--progress", 1 - progress);
