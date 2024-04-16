@@ -1,6 +1,7 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet";
 
 const ContactUs = () => {
   useEffect(() => {
@@ -8,6 +9,9 @@ const ContactUs = () => {
   }, []);
   return (
     <div data-aos="flip-down">
+      <Helmet>
+        <title>Contact Us</title>
+      </Helmet>
       <section className="py-6 my-5 bg-[#05A081] bg-opacity-5 rounded-xl dark:text-gray-900">
         <div className="grid w-full grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
           <div className="py-6 md:py-0 md:px-6">

@@ -3,6 +3,7 @@ import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 import { useForm } from "react-hook-form";
 import logo from "../../assets/Images/user.png";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet";
 
 const UserProfile = () => {
   const { updateUserProfile, user } = useContext(AuthContext);
@@ -35,6 +36,9 @@ const UserProfile = () => {
   }, [watch]);
   return (
     <div>
+      <Helmet>
+        <title>Profile</title>
+      </Helmet>
       <div className="   max-w-5xl  mx-auto my-8">
         {/* 1 */}
         <div className=" w-full flex   flex-col md:flex-row  items-center   my-5 bg-[#05A081] bg-opacity-5 p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">

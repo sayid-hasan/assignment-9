@@ -6,6 +6,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
   const { loginUser, loginWithGithub, logInwithGoogle } =
@@ -79,6 +80,9 @@ const Login = () => {
   }, [watch]);
   return (
     <div className="max-w-xl mx-auto ">
+      <Helmet>
+        <title>Login</title>
+      </Helmet>
       <div>
         <div className="w-full my-5 bg-[#05A081] bg-opacity-5 p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
           <h1 className="text-2xl font-bold text-center">Login</h1>

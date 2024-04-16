@@ -5,6 +5,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
   const { createUser, updateUserProfile } = useContext(AuthContext);
@@ -46,6 +47,9 @@ const Register = () => {
   }, [watch]);
   return (
     <div className=" mx-auto max-w-xl ">
+      <Helmet>
+        <title>Register</title>
+      </Helmet>
       <div className="max-w-xl">
         <div className="w-full   my-5 bg-[#05A081] bg-opacity-5 p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
           <h1 className="text-2xl font-bold text-center">Sign Up</h1>

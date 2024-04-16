@@ -1,6 +1,12 @@
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 const Faq = () => {
+  useEffect(() => {
+    AOS.init({ duration: "500", delay: "70" });
+  }, []);
   return (
-    <div>
+    <div data-aos="fade-up">
       <section className=" bg-[#05a081] bg-opacity-10 rounded mb-12">
         <div className="container flex flex-col justify-center p-4 mx-auto md:p-8">
           <h2 className="mb-12 text-4xl text-[#05a081] font-bold leading-none text-center sm:text-5xl">
