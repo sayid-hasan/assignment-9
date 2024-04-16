@@ -104,7 +104,7 @@ const UserProfile = () => {
 
               {/* button */}
               <button className="block w-full p-3 text-center rounded-lg bg-[#05A081]  text-white font-bold  dark:text-gray-50 dark:bg-violet-600">
-                Sign in
+                Update
               </button>
             </form>
           </div>

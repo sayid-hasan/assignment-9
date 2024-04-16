@@ -3,6 +3,7 @@
 import { useLoaderData } from "react-router-dom";
 import SliderSweeper from "./slidersweeper/SliderSweeper";
 import Estate from "./Estate/Estate";
+import Faq from "./Faq/Faq";
 
 //import Navbar from "../../Shared/Navbar/Navbar";
 
@@ -19,6 +20,8 @@ const Home = () => {
           ))}
         </div>
       }
+
+      <Faq></Faq>
     </>
   );
 };

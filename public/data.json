@@ -1,14 +1,26 @@
 [
   {
     "image": "https://i.ibb.co/Ydhf2fW/home-1.jpg",
-    "estate_title": "Luxurious Villa with Ocean View",
+    "estate_title": " Modern Downtown Family Home",
     "id": 1,
-    "segment_name": "Luxury",
-    "description": "Nestled atop a cliff overlooking the shimmering blue ocean, this luxurious villa offers an unparalleled living experience. With over 5000 square feet of living space, this masterpiece of architectural design boasts five spacious bedrooms, each with its own en-suite bathroom. The expansive living room features floor-to-ceiling windows that frame breathtaking panoramic views. The gourmet kitchen is equipped with state-of-the-art appliances and a large island perfect for entertaining guests. Step outside to your private infinity pool and soak in the stunning sunset views. Additional amenities include a home theater, gym, and lush gardens. Live the life of luxury in this exquisite villa.",
+    "segment_name": "Single-family homes",
+    "description": "Experience urban living at its finest in this sleek and stylish downtown apartment. Situated in the heart of the city, this contemporary residence offers convenience and comfort. The open-concept layout is perfect for modern living, with high ceilings and large windows flooding the space with natural light. The gourmet kitchen features stainless steel appliances and quartz countertops. Unwind in the spacious bedroom with views of the city skyline. Residents also have access to a rooftop terrace with panoramic city views. With shops, restaurants, and entertainment options just steps away, this apartment offers the ultimate urban lifestyle.",
     "price": "$5,000,000",
     "status": "sale",
     "area": "5000 sq ft",
-    "location": "Coastal Paradise, California",
+    "location": "Downtown Metropolis, New York",
+    "facilities": ["living room", "kitchen", "rooftop terrace"]
+  },
+  {
+    "image": "https://i.ibb.co/Lz6DLQH/home-2.jpg",
+    "estate_title": "Luxurious Apartment with Ocean View",
+    "id": 2,
+    "segment_name": "Urban",
+    "description": "Nestled atop a cliff overlooking the shimmering blue ocean, this luxurious villa offers an unparalleled living experience. With over 5000 square feet of living space, this masterpiece of architectural design boasts five spacious bedrooms, each with its own en-suite bathroom. The expansive living room features floor-to-ceiling windows that frame breathtaking panoramic views. The gourmet kitchen is equipped with state-of-the-art appliances and a large island perfect for entertaining guests. Step outside to your private infinity pool and soak in the stunning sunset views. Additional amenities include a home theater, gym, and lush gardens. Live the life of luxury in this exquisite villa.",
+    "price": "$800,000",
+    "status": "rent",
+    "area": "1200 sq ft",
+    "location": "Coastal Paradise, California ",
     "facilities": [
       "living room",
       "swimming pool",
@@ -16,53 +28,31 @@
       "home theater",
       "gym",
       "gardens"
-    ],
-    "view_property_button": "https://example.com/view_property/1"
-  },
-  {
-    "image": "https://i.ibb.co/Lz6DLQH/home-2.jpg",
-    "estate_title": "Modern Downtown Apartment",
-    "id": 2,
-    "segment_name": "Urban",
-    "description": "Experience urban living at its finest in this sleek and stylish downtown apartment. Situated in the heart of the city, this contemporary residence offers convenience and comfort. The open-concept layout is perfect for modern living, with high ceilings and large windows flooding the space with natural light. The gourmet kitchen features stainless steel appliances and quartz countertops. Unwind in the spacious bedroom with views of the city skyline. Residents also have access to a rooftop terrace with panoramic city views. With shops, restaurants, and entertainment options just steps away, this apartment offers the ultimate urban lifestyle.",
-    "price": "$800,000",
-    "status": "sale",
-    "area": "1200 sq ft",
-    "location": "Downtown Metropolis, New York",
-    "facilities": ["living room", "kitchen", "rooftop terrace"],
-    "view_property_button": "https://example.com/view_property/2"
+    ]
   },
   {
     "image": "https://i.ibb.co/LrwMMhk/home-3.jpg",
-    "estate_title": "Cozy Suburban Home",
+    "estate_title": "Cozy Suburban Rentals",
     "id": 3,
-    "segment_name": "Family",
-    "description": "Welcome home to this charming suburban retreat nestled in a quiet neighborhood. This cozy home features three bedrooms, two bathrooms, and a spacious backyard perfect for family gatherings. The inviting living room boasts a fireplace and large windows overlooking the lush landscaping. The kitchen is equipped with modern appliances and plenty of storage space. Enjoy summer barbecues on the patio or relax in the shade of the mature trees. With top-rated schools and parks nearby, this home offers the ideal setting for raising a family.",
-    "price": "$400,000",
-    "status": "sale",
+    "segment_name": "vacation rentals",
+    "description": "Welcome to our exclusive collection of vacation rentals, where unforgettable memories are waiting to be made. Nestled in some of the most breathtaking destinations, our properties offer a luxurious retreat for travelers seeking comfort, convenience, and unparalleled experiences. Step into a world of comfort and style as you enter our meticulously curated vacation rentals, each thoughtfully designed to provide the perfect blend of elegance and relaxation. Whether you're dreaming of a beachfront paradise, a cozy mountain cabin, or a vibrant urban oasis, we have the perfect setting for your next escape. Discover stunning views, explore local attractions, and immerse yourself in the culture and charm of your chosen destination. At [Your Real Estate Company Name], we believe in going above and beyond to ensure your vacation is nothing short of extraordinary. From seamless booking processes to dedicated concierge services, our team is committed to providing exceptional hospitality and making your stay truly unforgettable. Indulge in endless adventures or simply unwind and recharge – the choice i",
+    "status": "rent",
     "area": "1800 sq ft",
+    "price": "$300,000",
     "location": "Suburban Haven, Texas",
-    "facilities": ["living room", "kitchen", "backyard"],
-    "view_property_button": "https://example.com/view_property/3"
+    "facilities": ["living room", "kitchen", "backyard"]
   },
   {
     "image": "https://i.ibb.co/tJbtGDq/home-4.jpg",
-    "estate_title": "Historic Mansion in the Countryside",
+    "estate_title": "Historic Mansion in the Countryside for family",
     "id": 4,
-    "segment_name": "Historic",
+    "segment_name": "Single-family homes",
     "description": "Step back in time with this magnificent historic mansion nestled in the picturesque countryside. Dating back to the 19th century, this grand estate exudes charm and character at every turn. The stately exterior is adorned with intricate architectural details, while the interior boasts elegant period features including hardwood floors, crown molding, and antique fixtures. With ten bedrooms, seven bathrooms, and multiple spacious living areas, there is plenty of room for hosting guests or accommodating a large family. The expansive grounds feature manicured gardens, a sparkling pond, and a charming carriage house. Escape the hustle and bustle of city life and embrace the tranquility of country living in this timeless masterpiece.",
     "price": "$3,500,000",
     "status": "sale",
     "area": "8000 sq ft",
     "location": "Rural Retreat, England",
-    "facilities": [
-      "living room",
-      "kitchen",
-      "garden",
-      "pond",
-      "carriage house"
-    ],
-    "view_property_button": "https://example.com/view_property/4"
+    "facilities": ["living room", "kitchen", "garden", "pond", "carriage house"]
   },
   {
     "image": "https://i.ibb.co/xDWWSrL/home-5.jpg",
@@ -74,8 +64,7 @@
     "status": "sale",
     "area": "1500 sq ft",
     "location": "Arts District, San Francisco",
-    "facilities": ["living room", "kitchen", "rooftop deck"],
-    "view_property_button": "https://example.com/view_property/5"
+    "facilities": ["living room", "kitchen", "rooftop deck"]
   },
   {
     "image": "https://i.ibb.co/0BXGZxL/home-6.jpg",
@@ -84,10 +73,9 @@
     "segment_name": "Nature",
     "description": "Escape to the tranquility of the mountains with this secluded retreat. Tucked away amidst towering pine trees and majestic mountain peaks, this cozy cabin offers a peaceful getaway from the hustle and bustle of everyday life. The rustic interior features wood-paneled walls, a stone fireplace, and comfortable furnishings. The spacious deck is perfect for enjoying morning coffee or stargazing at night. Explore miles of hiking trails right outside your door or simply relax and soak in the serene natural surroundings. Whether you're seeking adventure or simply seeking solace, this mountain retreat offers the perfect balance of comfort and wilderness.",
     "price": "$300,000",
-    "status": "sale",
+    "status": "rent",
     "area": "2000 sq ft",
     "location": "Mountain Haven, Colorado",
-    "facilities": ["living room", "kitchen", "deck", "hiking trails"],
-    "view_property_button": "https://example.com/view_property/6"
+    "facilities": ["living room", "kitchen", "deck", "hiking trails"]
   }
 ]
