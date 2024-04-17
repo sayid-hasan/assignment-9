@@ -9,6 +9,7 @@ import Register from "../Pages/Register/Register";
 import PrivateRoutes from "./PrivateRoutes";
 import UserProfile from "../Pages/UserProfile/UserProfile";
 import EstateDetails from "../Pages/EstateDetails/EstateDetails";
+import Cart from "../Pages/Cart/Cart";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,15 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoutes>
             <EstateDetails></EstateDetails>
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "/cart",
+        loader: () => fetch("/data.json"),
+        element: (
+          <PrivateRoutes>
+            <Cart></Cart>
           </PrivateRoutes>
         ),
       },

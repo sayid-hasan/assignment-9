@@ -4,6 +4,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import { FaMapLocationDot } from "react-icons/fa6";
+import { getIdFromLS, saveIDinLS } from "../../Utilities/saveToLS";
+import { toast } from "react-toastify";
 
 const EstateDetails = () => {
   const { id } = useParams();
@@ -27,6 +29,16 @@ const EstateDetails = () => {
 
     description,
   } = estate;
+
+  const handleAddtoCart = () => {
+    const savedId = getIdFromLS();
+    if (!savedId.includes(id)) {
+      saveIDinLS(id);
+      toast.success("Property Added to cart");
+    } else {
+      toast.warning("already exist in card");
+    }
+  };
   return (
     <div>
       <Helmet>
@@ -98,13 +110,21 @@ const EstateDetails = () => {
 
             <p className="py-6 font-bitter leading-9">{description}</p>
 
-            {/* back to homepage */}
-            <Link
-              to="/"
-              className="self-center px-8 py-3 font-semibold rounded bg-[#05A081] text-white"
-            >
-              Back to Home
-            </Link>
+            {/* back to homepage and saved to Bookmarks */}
+            <div className="flex justify-between">
+              <Link
+                to="/"
+                className="self-center px-8 py-3 font-semibold rounded bg-[#05A081] text-white"
+              >
+                Back to Home
+              </Link>
+              <button
+                onClick={handleAddtoCart}
+                className="self-center px-8 py-3 font-semibold rounded bg-[#05A081] text-white"
+              >
+                Add to cart
+              </button>
+            </div>
           </div>
         </div>
       </div>
