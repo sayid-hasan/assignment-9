@@ -15,7 +15,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const location = useLocation();
-  console.log(location);
+  //console.log(location);
 
   const [showPass, setShowPass] = useState(false);
   const {
@@ -71,8 +71,8 @@ const Login = () => {
   };
 
   useEffect(() => {
-    const subscription = watch((data) => {
-      console.log(data);
+    const subscription = watch(() => {
+      //console.log(data);
     });
     return () => {
       subscription.unsubscribe();

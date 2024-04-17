@@ -8,7 +8,7 @@ const Cart = () => {
   const savedItemInLs = estates.filter((estate) =>
     SavedIdFromLs.includes(estate.id.toString())
   );
-  console.log(savedItemInLs);
+  //console.log(savedItemInLs);
   return (
     <div className="flex justify-center ">
       <div className="flex flex-col max-w-3xl w-full p-6 space-y-4 sm:p-10 dark:bg-gray-50 dark:text-gray-800">

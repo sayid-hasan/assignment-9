@@ -21,20 +21,18 @@ const Register = () => {
     const { email, username, password, image } = data;
 
     // console.log(email, username, password, image);
-    const from = "/login";
+    const from = "/";
     // creating user
     createUser(email, password)
       .then((res) => {
-        console.log(res.user);
         toast.success("registered successfully");
         navigate(from);
         updateUserProfile(username, image)
-          .then()
+          .then(res.user.reload())
           .catch((err) => console.log(err));
       })
       .catch(() => {
         toast.error("user exist already");
-        navigate(from);
       });
   };
   useEffect(() => {

@@ -17,7 +17,7 @@ const UserProfile = () => {
   const onSubmit = (data) => {
     const { username, image } = data;
 
-    console.log(username, image);
+    //console.log(username, image);
     updateUserProfile(username, image)
       .then(() => {
         toast.success(

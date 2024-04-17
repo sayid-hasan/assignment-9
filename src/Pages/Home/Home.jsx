@@ -10,7 +10,7 @@ import { Helmet } from "react-helmet";
 
 const Home = () => {
   const estates = useLoaderData();
-  console.log(estates);
+  //console.log(estates);
   return (
     <>
       <Helmet>
